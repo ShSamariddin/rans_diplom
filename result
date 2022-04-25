@@ -1,0 +1,20 @@
+core 1
+encode:
+rANS: 78.613443 bytes
+time: 35(26)
+decode:
+time: 23
+
+core 12
+rANS: 78.613441 bytes
+
+encode : 3
+read: 3
+decode:
+decode: 6
+write: 5
+
+Хаффман 
+Степень сжатие - писать 
+
+10 слайд 
