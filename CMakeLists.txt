@@ -10,3 +10,4 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -fopenmp")
 
 add_executable(rans_encoder main.cpp pgm/pgm.cpp pgm/pgm.h rANS/rANS.cpp rANS/rANS.h rANS/rans_byte.h)
 add_executable(rans_decoder decoder.cpp pgm/pgm.cpp pgm/pgm.h rANS/rANS.cpp rANS/rANS.h rANS/rans_byte.h)
+add_executable(rans_diff diff.cpp pgm/pgm.cpp pgm/pgm.h)

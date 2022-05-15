@@ -50,11 +50,11 @@
 #define RANS_BYTE_L (1u << 23)  // lower bound of our normalization interval
 
 //pgm width and height
-const int32_t pgm_width = 400;
-const int32_t pgm_height = 400;
+int32_t pgm_width = 8673;
+int32_t pgm_height = 400;
 const int core_num = 12;
-int const step = 6;
-int const last_file = 52063;
+int const step = 1;
+int const last_file = 399;
 int const first_file = 1;
 
 static const uint32_t prob_bits = 14;

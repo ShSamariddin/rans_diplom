@@ -17,4 +17,115 @@ write: 5
 Хаффман 
 Степень сжатие - писать 
 
-10 слайд 
+10 слайд
+
+
+ffmpeg
+size: 1389199998
+my       : 296948101      time: 3sec  percent: 21
+ultrafast: 374585303      time: 3sec  percent: 27
+superfast: 282932666      time: 5sec  percent: 21
+veryfast : 282878222      time: 6sec  percent: 20
+faste    : 279246100      time: 7sec  percent: 20
+
+slow     : 261934244      time:15sec  percent: 19
+commands:
+ffmpeg  -f image2 -pattern_type glob -framerate 30 -i 'pgm/wfd/*' -vf scale=400x400 -c:v libx264 -pix_fmt yuv420p -y res.mp4
+ffprobe -i res.mp4 -print_format json -loglevel fatal -show_streams -count_frames -select_streams v
+ffmpeg -i ../res/res.mp4 image%d.pg
+ffmpeg  -f image2 -pattern_type glob -framerate 30 -i 'pgm/wfd/*' -y res.avi
+ffmpeg -i 'pgm/wfd/*' -c:v libx264 -qp 0 -f mp4 res.mp4
+ffmpeg  -f image2 -pattern_type glob -framerate 30 -i 'pgm/wfd/*' -c:v libx264 -qp 0 -preset slow -f mp4 res.mp4
+
+ffmpeg -i res.mp4 res/pgm%08.pgm
+threading h264
+
+--core 1
+time finnal : 12
+296948064
+rans size : 296948064
+rans size : 1388480000
+rANS: 21.386557 bytes
+
+time finnal : 13
+
+-----core 2
+time finnal : 7
+296948067
+rans size : 296948067
+rans size : 1388480000
+rANS: 21.386557 bytes
+
+time finnal : 7
+
+--core 4
+time finnal : 4
+296948067
+rans size : 296948067
+rans size : 1388480000
+rANS: 21.386557 bytes
+
+time finnal : 4
+
+--core 8
+time finnal : 3
+296948087
+rans size : 296948087
+rans size : 1388480000
+rANS: 21.386558 bytes
+
+time finnal : 2
+--core 12
+time finnal : 2
+296948101
+rans size : 296948101
+rans size : 1388480004
+rANS: 21.386559 bytes
+
+
+time finnal : 2
+
+core 1
+time read : 1
+1388480000
+
+time decode : 22
+
+time write : 5
+
+core 2
+
+time read : 0
+1388480000
+
+time decode : 13
+
+time write : 5
+
+core 4
+
+time read : 0
+1388480000
+
+time decode : 9
+
+time write : 5
+
+core 8
+time read : 0
+1388480000
+
+time decode : 6
+
+time write : 4
+core 12
+
+time read : 0
+1388480004
+
+time decode : 4
+
+time write : 4
+
+
+

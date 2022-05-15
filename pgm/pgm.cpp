@@ -59,14 +59,6 @@ void PGM::diff_pgm(PGM& p){
     for (int h = 0; h < height; h ++){
         for (int w = 0; w < width; w ++) {
             data[h * width + w] = data[h * width + w] - p.get_pixel(w, h);
-//            if (data[h * width + w] < 10){
-//                data[h * width + w] = 0;
-//            }
         }
     }
 }
-//1388169850
-//782445179
-//73.742921
-//78.695865
-//21.929455
